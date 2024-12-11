@@ -10,11 +10,11 @@ import {
     Text
   } from '@react-email/components'
   import * as React from 'react'
-  
+
   interface LinkEmailProps {
     token?: string
   }
-  
+
   export const LinkEmail = ({ token }: LinkEmailProps) => (
     <Html>
       <Head />
@@ -23,7 +23,7 @@ import {
         <Container style={container}>
           <Heading style={h1}>Login</Heading>
           <Link
-            href={`${process.env.APP_URL}/verify-email?token=${token}`}
+            href={`${process.env.APP_URL}/new-verification?token=${token}`}
             target="_blank"
             style={{
               ...link,
@@ -43,7 +43,7 @@ import {
           >
             If you didn&apos;t try to login, you can safely ignore this email.
           </Text>
-  
+
           <Text
             style={{
               ...text,
@@ -53,7 +53,7 @@ import {
           >
             your logo here
           </Text>
-  
+
           <Text style={footer}>
             <Link
               href="https://nizzyabi.com"
@@ -70,23 +70,23 @@ import {
       </Body>
     </Html>
   )
-  
+
   LinkEmail.PreviewProps = {
     loginCode: 'sparo-ndigo-amurt-secan'
   } as LinkEmailProps
-  
+
   export default LinkEmail
-  
+
   const main = {
     backgroundColor: '#ffffff'
   }
-  
+
   const container = {
     paddingLeft: '12px',
     paddingRight: '12px',
     margin: '0 auto'
   }
-  
+
   const h1 = {
     color: '#333',
     fontFamily:
@@ -96,7 +96,7 @@ import {
     margin: '40px 0',
     padding: '0'
   }
-  
+
   const link = {
     color: '#2754C5',
     fontFamily:
@@ -104,7 +104,7 @@ import {
     fontSize: '14px',
     textDecoration: 'underline'
   }
-  
+
   const text = {
     color: '#333',
     fontFamily:
@@ -112,7 +112,7 @@ import {
     fontSize: '14px',
     margin: '24px 0'
   }
-  
+
   const footer = {
     color: '#898989',
     fontFamily:
@@ -122,7 +122,7 @@ import {
     marginTop: '12px',
     marginBottom: '24px'
   }
-  
+
   const code = {
     display: 'inline-block',
     padding: '16px 4.5%',
